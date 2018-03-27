@@ -40,3 +40,15 @@
     text-decoration:none;
     text-shadow:1px 1px 0px #9d4307;
 }
+#yourHand {
+    overflow:hidden;
+    position:relative;
+    border:1px solid #056B42;
+    border-radius:3px;
+    background: #287B59;
+    color:#69D1A7;
+    padding:.5em;
+    font-size:1.1em;
+    height:6em;
+    width:25em;
+}
