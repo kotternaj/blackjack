@@ -12,3 +12,31 @@
     text-decoration:none;
     text-shadow:1px 1px 0px #3a096a;
 }
+
+#hit{
+    background-color:#10a469;
+    border-radius:4px;
+    border:1px solid #287b58;
+    display:inline-block;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:7px 13px;
+    text-decoration:none;
+    text-shadow:1px 1px 0px #287b58;
+}
+
+#stand{
+    background-color:#f89350;   
+    border-radius:4px;
+    border:1px solid #b5693a;
+    display:inline-block;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:7px 13px;
+    text-decoration:none;
+    text-shadow:1px 1px 0px #9d4307;
+}
