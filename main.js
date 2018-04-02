@@ -77,9 +77,43 @@ var Card = function(suit, number){
     }
 }
 
+// constructor
 
+var Deck = function(){
+    var cards = [];
+    var newCards = function(){
+        var i, 
+            suit, 
+            number;
+        for (i = 0; i < 52; i++){
+            suit = i% 4 + 1; 
+            number = i% 13 + 1;
+            cards.push(new Card(suit, number));
+        }
+    };
 
-// Showt the Deal button, hide others
+    newCards();
+
+    this.shuffle = function(){
+        for(var j, x, i = cards.length; i; j = 
+            parseInt(Math.random() * i), x = cards[--1],
+            cards[i] = cards[j], cards[j] = x);
+        return this.getCards();
+    };
+    this.getCards = function (){
+        return cards;
+    };
+    this.deal = function(){
+        if (!cards.length){
+            console.log("Ran out of cards, new deck");
+            newCards();
+            this.shuffle();
+        }
+        return cards.pop();
+    };
+};
+
+// Show the Deal button, hide others
 var $hitButton = $('#hit'),
     $standButton = $('#stand'),
     $dealButton = $('#deal');
