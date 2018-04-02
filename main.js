@@ -144,8 +144,41 @@ var Hand = function(deck){
         }
         return score;
     };
-    
-}
+    //adds Card from Deck into hand
+    this.hitMe = function(){
+        if (cards.length < 5){
+            cards.push(desk.deal());
+        }
+    };
+
+};
+
+//Play BlackJack
+(function (){
+    //set up game's deck
+    var deck = new Deck();
+
+    var wins = 0
+    var losses = 0;
+
+    //score tally
+    var declareWinner = function(userHand, dealerHand){
+        var outcome = '',
+            dealerScore = dealerHand.score(),
+            userScore = userHand.score();
+        
+            if (userScore > 21 || dealerScore === 21){
+                outcome = "You lose!"
+                losses++;            
+            }else if (userScore <= 21 && userHand.getHand().length >= 5){
+                outcome = "You win! 5-card Charlie!";
+                wins ++;
+            }else if (dealerScore > 21 || userScore === 21 || userScore > dealerHand.score()){
+                outcome = "You win!";
+                wins++;
+               }
+    }
+})
 
 // Show the Deal button, hide others
 var $hitButton = $('#hit'),
