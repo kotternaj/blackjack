@@ -113,6 +113,40 @@ var Deck = function(){
     };
 };
 
+// constructor
+var Hand = function(deck){
+    var cards = [];
+
+    //deal two cards
+    cards.push(deck.deal(), deck.deal());
+   //returns {Array} the array of Cards representing the hand
+    this.getHand = function(){
+        return cards;
+    };
+    // returns {Number} The score of the hand
+    this.score = function(){
+        var i, 
+        score = 0,
+        cardVal = 0,
+        aces = 0;
+        
+        for (i = 0; i < cards.length; i++){
+            cardVal = cards[i].getValue();
+            if (cardVal == 11) {
+                aces += 1;
+            }
+            score += cardVal;
+        }
+        //check to see if Aces should be counted as 1 or 11
+        while (score > 21 && aces > 0){
+            score -= 10;
+            aces -=1
+        }
+        return score;
+    };
+    
+}
+
 // Show the Deal button, hide others
 var $hitButton = $('#hit'),
     $standButton = $('#stand'),
